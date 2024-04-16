@@ -1,0 +1,41 @@
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>All users</h2>
+        <h5>Welcome Jhon Deo , Love to see you back.</h5>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Userame</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% for(let k of data) { %>
+              <tr>
+                <td id="showadmin<%=k._id%>"><%=k.username%></td>
+                <td><a href="/admin/singleAdmin/<%=k._id%>">View</a></td>
+                <td><a href="/admin/editadmin/<%=k._id%>">Edit</a></td>
+                <td><a href="/admin/removeadmin/<%=k._id%>">Remove</a></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- /. ROW  -->
+
+      <hr />
+    </div>
+    <!-- /. PAGE INNER  -->
+  </div>
+  <!-- /. PAGE WRAPPER  -->
+</div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h2 {
+        text-align: center;
+      }
+      .checkout-section {
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #ddd;
+      }
+      .checkout-section p {
+        margin-top: 10px;
+        padding-right: 20px;
+      }
+      .checkout-section button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+       td a {
+        color: #333;
+        background-color: #e4e4e4;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>My cart</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Images</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i of d.product) {%>
+        <tr>
+          <td>
+            <img
+              src="<%=i.productimage%>"
+              alt=""
+              style="width: 100%; max-width: 200px"
+            />
+          </td>
+          <td><%=i.productname%></td>
+          <td>₹<%=i.productprice%></td>
+          <td>
+            <a href="/removeproduct/<%=i._id%>">Remove</a>
+          </td>
+        </tr>
+        <%}%>
+      </tbody>
+    </table>
+
+    <div class="checkout-section">
+      <p>Total: ₹</p>
+      <button>Checkout</button>
+    </div>
+  </body>
+</html>
