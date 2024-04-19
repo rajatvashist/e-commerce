@@ -14,7 +14,6 @@ const mycart = require("./models/carts");
 const mongoose = require("mongoose");
 const multer = require("multer");
 const multerupload = require("./models/multers");
-const { Console } = require("console");
 
 mongoose.connect("mongodb://localhost:27017/ecomerce");
 var db = mongoose.connection;
