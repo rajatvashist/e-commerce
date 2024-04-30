@@ -15,7 +15,8 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const multerupload = require("./models/multers");
 
-mongoose.connect("mongodb://localhost:27017/ecomerce");
+// mongoose.connect("mongodb://localhost:27017/ecomerce");
+mongoose.connect("mongodb+srv://rajat:rajat123@cluster0.w7h9stj.mongodb.net/");
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 db.once("open", function callback() {
