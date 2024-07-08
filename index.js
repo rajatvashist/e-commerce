@@ -15,7 +15,9 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const multerupload = require("./models/multers");
 
-mongoose.connect("mongodb://localhost:27017/ecomerce");
+mongoose.connect(
+  "mongodb+srv://root:root-root@admin.h2liac0.mongodb.net/ecommerce"
+);
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 db.once("open", function callback() {
@@ -73,7 +75,6 @@ app.get("/product", (req, res) => {
 
 app.get("/product/:id", (req, res) => {
   const id = req.params.id;
-  // console.log(res.locals.ide);
   let totals = 0;
   let price = 0;
   myproduct
@@ -352,7 +353,7 @@ app.post(
     let ab = new myproduct({
       productname: req.body.productname,
       productimage: req.file.filename,
-      productprice: req.body.productprice
+      productprice: req.body.productprice,
     });
     ab.save();
     res.redirect("/admin/addproduct?msg=1");
